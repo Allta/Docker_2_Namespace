@@ -22,41 +22,10 @@ Si vous avez des problèmes sur une command utilisez `docker [command] --help`.
  
 ## Exercice 1: Running container
 
-- Lancer un container Ubuntu en background qui affiche la date toutes les 2 secondes.
+- Lancer un container Ubuntu en partageant le namespid `PID` avec l'hôte
+- Créer un processus dans ce container
+- Retrouver ce processus depuis votre hôte
 
-<details>
-  <summary>Hint</summary>
-  
-  
-  ```bash
-  while true; do date; sleep 2; done
-  ```
-  
-</details>
-
-- Regarder les logs en temps réel depuis l'hôte
-- Rentrer dans le container de afficher les processus
-- Kill le container
-  - Créer un fichier d'explication sur `docker kill`. Que se passe-t-il côté systeme lorsqu'on lance la commande pour killer un container ? 
- 
- <details>
-  <summary>Hint</summary>
-  
-  Les utilitaires `ptrace` ou `ltrace` peuvent vous aider
-</details>
 
 ## Exercice 2 : Clean Container
-
-- Afficher tout les containers de votre hôte
-  - Running
-  - Stopped
-  - Exited
-- Supprimer tout les containers stoppés
-- Afficher toutes les images
-- Supprimer les images en doublon
-
-- En **une** commande il faut : 
-  - Lancer un container ubuntu avec la commande d'affichage de l'heure 
-  - Rentrer dans le container
-  - Supprimer le container lorsqu'on quitte le container
 
