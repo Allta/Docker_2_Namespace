@@ -23,9 +23,6 @@ Si vous avez des problèmes sur une command utilisez `docker [command] --help`.
 ## Exercice 1: Running container
 
 - Lancer un container Ubuntu en partageant le namespid `PID` avec l'hôte
-- Créer un processus dans ce container
-- Retrouver ce processus depuis votre hôte
-
-
-## Exercice 2 : Clean Container
-
+- Créer une variable d'environnement dabs votre container
+- Créer un processus sur le container. Exemple : Une boucle while infinie.
+- Retrouver ce processus depuis votre hôte et afficher la variable d'environnement. 
