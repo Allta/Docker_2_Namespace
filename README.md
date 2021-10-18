@@ -1,7 +1,7 @@
 # TP Docker_2_Namespace - Ynov DevOps B3
 
 
-## **Rendu :** Un fichier pdf : DEVOPS_DOCKER1_[NOM]\_[PRENOM].md
+## **Rendu :** Un fichier MD : DEVOPS_DOCKER1_[NOM]\_[PRENOM].md
 
 Vous avez un template de rendu dans le repo. 
 Pour chaque étape, documenter vos actions : 
