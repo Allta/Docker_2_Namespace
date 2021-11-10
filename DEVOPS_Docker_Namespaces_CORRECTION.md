@@ -26,7 +26,7 @@ Toutes les informations liées aux processus sont retrouvable dans le dossier `/
 
 Ci-dessus : Le terminal supérieur présente les namespaces du container et celui du bas ceux de l'hôte. On constate bien que l'ID du namespace PID est le même pour les 2 processus. Le namespace UTS est lui différent et nous pouvons le constater facilement en regardant l'hostname du container et celui de l'hôte, ce ne sont pas les mêmes donc le namespace UTS ne sont pas partagés
 
-Note : `/proc/self`équivaut au process actuellement en cours qui appele le symlink /proc/self
+Note : `/proc/self` équivaut au process actuellement en cours qui appele le symlink /proc/self
 
 Source : https://unix.stackexchange.com/questions/333225/which-process-is-proc-self-for 
 
@@ -48,6 +48,7 @@ On recherche donc le process `dockerd` et on affiche les quelques lignes après 
 
 ![ps host](https://i.imgur.com/f3y6T4q.png)
 
+Nous voyons bien que le processus **5484** est `bash` comme vu dans notre container grâce à la commande `echo $$`.
 
 Une fois le PID retrouvé nous pouvons afficher les informations relative à ce processus.
 Toutes les infos seront dans `/proc/7965/` ce qui nous intéresse est la variable d'environnement créée dans le container.
