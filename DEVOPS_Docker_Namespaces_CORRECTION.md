@@ -24,8 +24,10 @@ Toutes les informations liées aux processus sont retrouvable dans le dossier `/
 Ci-dessus : Le terminal supérieur présente les namespaces du container et celui du bas ceux de l'hôte. On constate bien que l'ID du namespace PID est le même pour les 2 processus. Le namespace UTS est lui différent et nous pouvons le constater facilement en regardant l'hostname du container et celui de l'hôte, ce ne sont pas les mêmes donc le namespace UTS ne sont pas partagés
 
 Note : `/proc/self`équivaut au process actuellement en cours qui appele le symlink /proc/self
+
 Source : https://unix.stackexchange.com/questions/333225/which-process-is-proc-self-for 
-Code source du kernel Linux : https://elixir.bootlin.com/linux/latest/source/fs/proc/self.c 
+
+Code source du kernel Linux : https://elixir.bootlin.com/linux/latest/source/fs/proc/self.c https://elixir.bootlin.com/linux/latest/source/fs/proc/self.c
 
 
 ![process container](https://imgur.com/yGd0q1p.png)
