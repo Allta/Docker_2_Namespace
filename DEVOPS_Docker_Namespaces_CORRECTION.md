@@ -12,7 +12,10 @@ Le flag `--pid=host` permet de partager le namespace **pid** entre l'hôte et le
 ![docker run ](https://i.imgur.com/nP8nPoM.png)
 
 Le container ubuntu et notre hôte partagent le même namespace donc depuis le container nous pouvons voir et interargir avec les processus de l'ĥote.
-La commande ps nous montre que le **PID 1** est le processus **d'initialisation** de la machine Linux et non le programme **bash** que nous avions spécifié lors du lancement du container. Cela montre bien que depuis le container nous ayons bien accés aux processus de l'hôte.
+
+Nous savons que le **PID 1** est important pour un container. Il s'agit du process lancé lors de l'appel d'une image via l'instruction CMD/ENTRYPOINT.
+
+Cependant la commande ps nous montre que le **PID 1** est le processus **d'initialisation** de la machine Linux et non le programme **bash** que nous avions spécifié lors du lancement du container. Cela montre bien que depuis le container nous ayons bien accés aux processus de l'hôte.
 
 ![docker ps](https://i.imgur.com/YdMw8iS.png)
 
