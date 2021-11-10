@@ -30,18 +30,26 @@ Source : https://unix.stackexchange.com/questions/333225/which-process-is-proc-s
 Code source du kernel Linux : https://elixir.bootlin.com/linux/latest/source/fs/proc/self.c https://elixir.bootlin.com/linux/latest/source/fs/proc/self.c
 
 
-![process container](https://imgur.com/yGd0q1p.png)
 
 Dans le container, nous créons une variable d'environnement `FOO` ainsi qu'un processus qui va tourner non stop.
 Le processus ici sera `sleep`.
+
+Le `echo $$` permet d'afficher le **PID** du process en cours. Ici il s'agit du process `bash` lancé lors de la création du container.
+
 Puisque le namespace pid est partagé nous devrions pouvoir le retrouvé depuis notre hôte.
 
+![process container](https://imgur.com/yGd0q1p.png)
 
-Depuis l'hôte nous pouvons retrouver le 
+Le proccess lancé dans notre container doit forcément être un enfant du processus *dockerd* (Docker Daemon).
+On recherche donc le process `dockerd` et on affiche les quelques lignes après pour retrouver le process `sleep` de notre container.
 
 ![ps host](https://i.imgur.com/f3y6T4q.png)
 
+
+Une fois le PID retrouvé nous pouvons afficher les informations relative à ce processus.
+Toutes les infos seront dans `/proc/7965/` ce qui nous intéresse est la variable d'environnement créée dans le container.
+
 ![process environ](https://i.imgur.com/HfCKF2g.png)
-    Créer une variable d'environnement dans votre container
-    Créer un processus sur le container. Exemple : Une boucle while infinie qui affiche l'heure.
-    Retrouver ce processus depuis votre hôte et afficher la variable d'environnement.
+
+
+
