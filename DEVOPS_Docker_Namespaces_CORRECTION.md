@@ -2,7 +2,7 @@
 
 ## Exercice 1 : 
 
-https://i.imgur.com/nP8nPoM.png
+![docker run ](https://i.imgur.com/nP8nPoM.png)
 
     Lancer un container Ubuntu en partageant le namespace pid PID avec l'hôte
     Créer une variable d'environnement dans votre container
